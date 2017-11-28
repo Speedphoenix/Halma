@@ -1,0 +1,578 @@
+Défaud
+[0 ]
+
+(1 )
+"Quelle langue?#1: Français#2: English#3: Italiano#4: Русский (credits to Artemii Lazovskii)#0: Utiliser les valeurs par défaut et passer au choix du jeu (Agrandir la fenêtre maintenant)##"
+
+(2 )
+"La langue a été mise par défaut en français#"
+
+(3 )
+
+
+
+
+Français
+[1 ]
+
+(1 )
+"#ATTENTION! Agrandir la fenêtre! Plein écran recommandé#"
+
+(2 )
+"#Voulez-vous voir les règles du jeu? (0 - non / 1 - oui)#"
+
+(3 )
+"##Le jeu de halma est un jeu de plateau, qui se joue à 2 ou 4 joueurs. Dans le cas où la partie rassemble deux joueurs, chacun possède 19 pions. Dans le jeu à 4, il en dispose de 13. Ces pions sont disposés sur un plateau de 16 cases sur 16. Chaque joueur commence le jeu avec tous ses pions dans un coin du damier (les maisons). Le premier qui réussit à emmener l’intégralité de ses pions jusqu’au coin opposé remporte la partie.##Il y a deux façons  de déplacer un pion:#Le pas : se déplacer vers une case libre adjacente.#Le saut : le pion saute par-dessus un pion (adverse ou non) afin de se rendre sur une case libre adjacente à celui-ci. Un pion peut effectuer autant de saut durant un même tour que désiré.#Un pion peut se déplacer dans n’importe quelle direction (en diagonale aussi).##"
+
+(4 )
+"#Combien de joueurs? (2 ou 4)#"
+
+(5 )
+"Le %sjoueur %d%s a gagné!!#"
+
+(6 )
+"#Voulez vous rejouer? (0 - non / 1 - oui)#"
+
+(7 )
+"Merci à Artemii Lazovskii pour la traduction en Russe"
+
+(8 )
+"#%sJoueur %d%s#"
+
+(9 )
+"#C'est au %sjoueur %d%s de jouer!!#"
+
+(10 )
+"##Ce déplacement n'est pas possible. Voulez-vous choisir un autre pion? (0 - non / 1 - oui)#"
+
+(11 )
+"##Vous n'avez pas sélectioné de pion...#"
+
+(12 )
+"##Le pion sélectionné ne peut pas être déplacé#"
+
+(13 )
+"#Entrez les coordonnées du pion à déplacer#x: "
+
+(14 )
+"#Entrez les coordonnées d'arrivée du déplacement#x: "
+
+(15 )
+"#Voulez vous effectuer un autre saut? (0 - non / 1 - oui)#"
+
+(16 )
+"##Choisissez les coordonnées d'arrivée du déplacement#x: "
+
+(17 )
+"#Ce déplacement n'est pas possible#"
+
+(18 )
+"#Voulez vous effectuer un autre saut? (0 - non / 1 - oui)#"
+
+(19 )
+"##%s***FIN DU TOUR***%s##"
+
+(20 )
+"#Quel type de clavier utilisez-vous? (azerty - 0 ou qwerty - 1)#"
+
+(21 )
+"#Votre clavier est défini comme azerty par défaut#"
+
+(22 )
+"#Utilisez les flèches du clavier pour déplacer le curseur, ENTRÉE pour valider le choix et P pour mettre le jeu en pause#"
+
+(23 )
+"Voulez vous charger une partie sauvegardée?"
+
+(24 )
+"***PAUSE***"
+
+(25 )
+" - Reprendre la partie"
+
+(26 )
+" - Enregistrer la partie"
+
+(27 )
+"***Partie sauvegardée***"
+
+(28 )
+" - Quitter le jeu"
+
+(29 )
+" - Paramètres du clavier"
+
+(30 )
+"Quel type de clavier utilisez-vous?#"
+
+(31 )
+" - azerty"
+
+(32 )
+" - qwerty"
+
+(33 )
+"#Utilisez les flèches du clavier pour déplacer le curseur et ENTRÉE pour selectionner#"
+
+(34 )
+"Combien de maisons?"
+
+(35 )
+"%d Maisons"
+
+(36 )
+"Choisissez pour chaque maison si vous voullez une Intelligence Artificielle ou un Joueur"
+
+(37 )
+"%sMaison n°%d%s"
+
+(38 )
+"%sPL%s"
+
+(39 )
+"%sIA%s"
+
+(40 )
+"Confirmer"
+
+(41 )
+"Partie %d"
+
+(42 )
+"Nouvelle partie"
+
+(43 )
+"Quelle sauvegarde?"
+
+(44 )
+"Annuler"
+
+(45 )
+
+
+
+
+English
+
+[2 ]
+
+(1 )
+"#WARNING! Increase the size of the window! Full screen mode highly recommended#"
+
+(2 )
+"#Do you want to read the game rules? (0 - no / 1 - yes)#"
+
+(3 )
+"##Halma is a board game for 2 or 4 players. When playing with two players, each has 19 pawns. When playing with four players, each has 13. The game happens over a 16 by 16 checkerboard. Each player starts with his pawns in a corner of the board (the ‘houses’). The first player who moves all of his pawns to the opposite corner of the board wins the game.##There are two ways of moving a pawn:#A step: move the pawn to a nearby space.#A jump: the pawn jumps over another (ally or enemy) to get to a free space on the other side. One said pawn can do as many jumps in a single turn as needed.#A pawn can move in any direction (diagonally too).##"
+
+(4 )
+"#How many players? (2 or 4)#"
+
+(5 )
+"%sPlayer %d%s has won!!#"
+
+(6 )
+"#Do you want to play again? (0 - no / 1 - yes)#"
+
+(7 )
+"Special thanks to Artemii Lazovskii for the translation in russian"
+
+(8 )
+"#%sPlayer %d%s#"
+
+(9 )
+"#It's %splayer %d%s's turn!!#"
+
+(10 )
+"##This move is not possible. Do you want to choose a different pawn? (0 - no / 1 - yes)#"
+
+(11 )
+"##You have not selected a pawn...#"
+
+(12 )
+"##The selected pawn cannot be moved#"
+
+(13 )
+"#Enter the coordinates of the pawn you want to move#x: "
+
+(14 )
+"#Enter the final coordinates of your move#x: "
+
+(15 )
+"#Do you want to make another jump? (0 - no / 1 - yes)#"
+
+(16 )
+"##Choose the final coordinates of your move#x: "
+
+(17 )
+"#This move is not allowed#"
+
+(18 )
+"#Do you want to do another jump? (0 - no / 1 - yes)#"
+
+(19 )
+"##%s***END OF TURN***%s##"
+
+(20 )
+"#What type of keyboard do you use? (azerty - 0 or qwerty - 1)#"
+
+(21 )
+"#Your keyboard has been set to azerty by default#"
+
+(22 )
+"#Use the arrow keys to move the cursor, ENTER to validate your choice and P to pause the game#"
+
+(23 )
+"Do you want to load a saved game?"
+
+(24 )
+"***PAUSE***"
+
+(25 )
+" - Resume game"
+
+(26 )
+" - Save game"
+
+(27 ) 
+"***Game saved***"
+
+(28 )
+" - Leave the game"
+
+(29 )
+" - Keyboard settings"
+
+(30 )
+"What type of keyboard do you use?"
+
+(31 )
+" - azerty"
+
+(32 )
+" - qwerty"
+
+(33 )
+"#Use the arrow keys to move the cursor and ENTER to validate your choice#"
+
+(34 )
+"How many houses?"
+
+(35 )
+"%d Houses"
+
+(36 )
+"Choose for each house whether you want an Artificial Intelligence or a Player"
+
+(37 )
+"%sHouse n°%d%s"
+
+(38 )
+"%sPL%s"
+
+(39 )
+"%sAI%s"
+
+(40 )
+"Confirm"
+
+(41 )
+"Game %d"
+
+(42 )
+"New game"
+
+(43 )
+"Which save file?"
+
+(44 )
+"Cancel"
+
+(45 )
+
+
+
+
+
+Italiano
+
+[3 ]
+
+(1 )
+"#ATTENZIONE! Ingrandire le dimensioni della finestra! Schermo intero racommandato#"
+
+(2 )
+"#Volete leggere le regole del gioco? (0 - no / 1 - si)#"
+
+(3 )
+"##Halma è un gioco di società per 2 o 4 giocatori. In due, ognuno ha 19 pedine, in quattro ognuno ne ha 13. Il gioco si svolge su uno scacchiere 16 per 16. Ogni giocatore comincia in un angolo (le ‘case’), il primo giocatore a spostare ogni pedina nell'angolo opposto vince la partita.##Ci sono due modi per spostare una pedina:#Un passo: muovi la pedina su una casella accanto.#Un salto: la pedina salta sopra un'altra pedina per arrivare sulla casella opposta. Una pedina può fare più salti nello stesso turno.#Una pedina può spostarsi in qualunque direzione (anche in diagonale).##"
+
+(4 )
+"#Quanti giocatori? (2 o 4)#"
+
+(5 )
+"Il %sgiocatore %d%s ha vinto!!#"
+
+(6 )
+"#Volete giocare di nuovo? (0 - no / 1 - si)#"
+
+(7 )
+"Grazie a Artemii Lazovskii per la traduzione in russo"
+
+(8 )
+"#%sGiocatore %d%s"
+
+(9 )
+"#Tocca al %sgiocatore %d%s!!"
+
+(10 )
+"##Questa mossa non è possibile. Vuoi scegliere un altra pedina? (0 - no / 1 - si)#"
+
+(11 )
+"##Non hai selezionato una pedina...#"
+
+(12 )
+"##La pedina selezionata non può essere mossa#"
+
+(13 )
+"#Inserisci le coordinate della pedina che vuoi muovere#x: "
+
+(14 )
+"#Scegli le coordinate di arrivo della mossa#x: "
+
+(15 )
+"#Vuoi fare un altro salto?? (0 - no / 1 - si)#"
+
+(16 )
+"##Scegli le coordinate di arrivo della mossa#x: "
+
+(17 )
+"#Questa mossa non è possibile#"
+
+(18 )
+"#Vuoi fare un altro salto?? (0 - no / 1 - si)#"
+
+(19 )
+"##%s***FINE DEL TURNO***%s##"
+
+(20 )
+"#Che tipo di tastiera usi? (azerty - 0 o qwerty - 1)#"
+
+(21 )
+"#La tastiera è predefinita come azerty#"
+
+(22 )
+"#Usa itasti freccia per spostare il cursore, ENTER per validare la scelta e P per mettere il gioco in pausa#"
+
+(23 )
+"Volete caricare una partita salvata?"
+
+(24 )
+"***PAUSA***"
+
+(25 )
+" - Riprendere la partita"
+
+(26 )
+" - Salvare la partita"
+
+(27 )
+"***Partita salvata***"
+
+(28 )
+" - Uscire dal Gioco"
+
+(29 )
+" - Impostazioni della tastiera"
+
+(30 )
+"Che tipo di tastiera usi?"
+
+(31 )
+" - azerty"
+
+(32 )
+" - qwerty"
+
+(33 )
+"#Usa i tasti freccia per spostare il cursore e ENTER per validare la scelta#"
+
+(34 )
+"Quante case?"
+
+(35 )
+"%d Case"
+
+(36 )
+"Scegli per ogni casa se vuoi un Intelligenza Artificiale o un Giocatore"
+
+(37 )
+"%sCasa n°%d%s"
+
+(38 )
+"%sPL%s"
+
+(39 )
+"%sIA%s"
+
+(40 )
+"Confermare"
+
+(41 )
+"Partita %d"
+
+(42 )
+"Nuova partita"
+
+(43 )
+"Che salvaguarda?"
+
+(44 )
+"Annuller"
+
+(45 )
+
+
+
+
+
+Русский 
+
+[4 ]
+
+(1 )
+"#ВНИМАНИЕ! Увеличить окно! Полноэкранный режим рекомендуется#"
+
+(2 )
+"#Желаете ли вы узнать правила игры? (0 - нет / 1 - да))#"
+
+(3 )
+"##Игра Уголки (или по-буржуйски Халма) рассчитана на партию для двух или четырех человек. В том случае, если игроков двое- каждый из них имеет по 19 шашек (фишек, пионов). Если же игроков четверо- то у каждого имеется по 13 шашек. Шашки расставляются на доске размером 16 на 16 квадратов. Каждый игрок начинает игру с шашками, расставленными в определенном углу игральной доски (в доме). Первый игрок, сумевший перевести все свои шашки в противоположный дом противника становится победителем игры.##Шашки можно перемещать двумя способами:#Ход: перемещение шашки в соседнюю свободную клеткую (вверх, вниз, вправо, влево, по диагонали).#Скачок: шашка игрока может перепрыгнуть через шашку оппонента на следующую свободную клетку. #Одной шашкой за один ход игрок может сделать столько скачков, сколько захочет, если это позволяет ситуация.##"
+
+(4 )
+"#Выберите количество игроков: (2 или 4)#"
+
+(5 )
+"%sИгрок %d%s победил!!#"
+
+(6 )
+"#Желаете ли сыграть еше раз? (0 - нет / 1 - да)#"
+
+(7 )
+"Благодарность Артему Лазовскому за перевод на русский"
+
+(8 )
+"#%sИгрока %d%s#"
+
+(9 )
+"#Ход %sигрока %d%s!!#"
+
+(10 )
+"##Это перемещение невозможно. Желаете ли вы выбрать другую шашку? (0 - нет / 1 - да)#"
+
+(11 )
+"##Вы не выбрали шашку...#"
+
+(12 )
+"##Выбранную шашку нельзя переместить#"
+
+(13 )
+"#Введите координаты шашки, которую хотите переместить#x: "
+
+(14 )
+"#Введите координаты места, на которое хотите поставить шашку#x: "
+
+(15 )
+"#Желаете ли вы совершить еще один скачок? (0 - нет / 1 - да)#"
+
+(16 )
+"##Введите координаты места, на которое хотите поставить шашку#x: "
+
+(17 )
+"#Это перемещение невозможно#"
+
+(18 )
+"#Желаете ли вы совершить еще один скачок? (0 - нет / 1 - да)#"
+
+(19 )
+"##%s***КОНЕЦ ХОДА***%s##"
+
+(20 )
+"#Какую клавиатуру вы используете? (Azerty - 0 или Qwerty -1)#"
+
+(21 )
+"#Ваша клавиатура изначально определяется как Azerty#"
+
+(22 )
+"#Используйте стрелки на клавиатуре, чтобы переместить курсор, клавишу ENTER для совершения выбора и клавишу P для того, чтобы поставить игру на паузу#"
+
+(23 )
+"Желаете ли вы загрузить сохранённую игру?"
+
+(24 )
+"***Пауза***"
+
+(25 )
+" - Возобновить партию"
+
+(26 )
+" - Сохранить партию"
+
+(27 )
+"***Партия сохранена***"
+
+(28 )
+" - Выйти из игры"
+
+(29 )
+" - Настройки клавиатуры"
+
+(30 )
+"Какую клавиатуру вы используете?"
+
+(31 )
+" - azerty"
+
+(32 )
+" - qwerty"
+
+(33 )
+"#Используйте стрелки на клавиатуре, чтобы переместить курсор, и клавишу ENTER для совершения выбора#"
+
+(34 )
+"Сколько домиков?"
+
+(35 )
+"%d Домики"
+
+(36 )
+"Отдайте каждый домик под управление другого икорка или под управление компьютера, если желаете"
+
+(37 )
+"%sДомик n°%d%s"
+
+(38 )
+"%sИГ%s"
+
+(39 )
+"%sИИ%s"
+
+(40 )
+"Подтвердить"
+
+(41 )
+"Сохранить %d"
+
+(42 )
+"Новая партия"
+
+(43 )
+"Какое сохранение?"
+
+(44 )
+"Отменить"
+
+(45 )
+
+
+

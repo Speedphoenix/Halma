@@ -1,0 +1,157 @@
+# depslib dependency file v1.0
+1481919327 source:/home/leonardo/Documents/Programmes/Halma_Linux/main.c
+	"Sous_programmes.h"
+
+1481917941 source:/home/leonardo/Documents/Programmes/Halma_Linux/affichage.c
+	"Sous_programmes.h"
+
+1481918899 /home/leonardo/Documents/Programmes/Halma_Linux/Sous_programmes.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdarg.h>
+	<stdlib.h>
+	<termios.h>
+	<unistd.h>
+
+1481216288 source:/home/leonardo/Documents/Programmes/Halma_Linux/Blindages.c
+	"Sous_programmes.h"
+
+1481468921 source:/home/leonardo/Documents/Programmes/Halma_Linux/deplacement.c
+	"Sous_programmes.h"
+
+1481469005 source:/home/leonardo/Documents/Programmes/Halma_Linux/Emplacements.c
+	"Sous_programmes.h"
+
+1481919176 source:/home/leonardo/Documents/Programmes/Halma_Linux/Intelligence artificielle.c
+	"Sous_programmes.h"
+
+1481889693 source:/home/leonardo/Documents/Programmes/Halma_Linux/Texte.c
+	"Sous_programmes.h"
+
+1481496021 source:/home/leonardo/Documents/Programmes/Halma_Linux/mouvements.c
+	"Sous_programmes.h"
+
+1481918069 source:/home/leonardo/Documents/Programmes/Halma_Linux/pause.c
+	"Sous_programmes.h"
+
+1481214235 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/affichage.c
+	"Sous_programmes.h"
+
+1481214616 /home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/Sous_programmes.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdarg.h>
+	<termios.h>
+	<unistd.h>
+
+1481212139 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/Blindages.c
+	"Sous_programmes.h"
+
+1481214236 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/deplacement.c
+	"Sous_programmes.h"
+
+1481211169 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/Emplacements.c
+	"Sous_programmes.h"
+
+1481214654 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/Intelligence artificielle.c
+	"Sous_programmes.h"
+
+1481214384 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/main.c
+	"Sous_programmes.h"
+
+1481214397 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/mouvements.c
+	"Sous_programmes.h"
+
+1481214432 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/pause.c
+	"Sous_programmes.h"
+
+1481095014 source:/home/leonardo/Documents/Programmes/Halma_marche/Halma_Linux/Texte.c
+	"Sous_programmes.h"
+
+1481886706 source:/home/leonardo/Documents/Programmes/Halma_Linux/menu.c
+	"Sous_programmes.h"
+
+1483898042 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/affichage.c
+	"Sous_programmes.h"
+
+1483898977 /home/leonardo/Documents/Programmes/C/Halma_Linux/Sous_programmes.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdarg.h>
+	<string.h>
+	<time.h>
+	<termios.h>
+	<unistd.h>
+	<fcntl.h>
+
+1483897823 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/Blindages.c
+	"Sous_programmes.h"
+
+1483898090 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/deplacement.c
+	"Sous_programmes.h"
+
+1483897766 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/Emplacements.c
+	"Sous_programmes.h"
+
+1483898202 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/Intelligence artificielle.c
+	"Sous_programmes.h"
+
+1483898981 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/main.c
+	"Sous_programmes.h"
+
+1483635058 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/menu.c
+	"Sous_programmes.h"
+
+1483897822 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/mouvements.c
+	"Sous_programmes.h"
+
+1483897050 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/pause.c
+	"Sous_programmes.h"
+
+1483821534 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/Texte.c
+	"Sous_programmes.h"
+
+1483185817 source:/home/leonardo/Documents/Programmes/C/Halma_Linux/kbhit.c
+	"Sous_programmes.h"
+
+1483898042 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/affichage.c
+	"Sous_programmes.h"
+
+1483898978 /home/leonardo/Documents/Programmes/C/Halma_Linux (2)/Sous_programmes.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdarg.h>
+	<string.h>
+	<time.h>
+	<termios.h>
+	<unistd.h>
+	<fcntl.h>
+
+1483897824 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/Blindages.c
+	"Sous_programmes.h"
+
+1483898090 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/deplacement.c
+	"Sous_programmes.h"
+
+1483897766 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/Emplacements.c
+	"Sous_programmes.h"
+
+1483898982 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/main.c
+	"Sous_programmes.h"
+
+1483635058 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/menu.c
+	"Sous_programmes.h"
+
+1483897822 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/mouvements.c
+	"Sous_programmes.h"
+
+1483897050 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/pause.c
+	"Sous_programmes.h"
+
+1483901638 source:/home/leonardo/Documents/Programmes/C/Halma_Linux (2)/Texte.c
+	"Sous_programmes.h"
+

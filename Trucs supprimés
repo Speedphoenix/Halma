@@ -1,0 +1,1188 @@
+     (Только Linux)
+
+
+    ///affichage des pion///
+    int i,j;
+    for (i=0;i<nb_j;i++)
+    {
+        switch (langue) //Position des pions du joueur x
+        {
+            case 1:
+            printf("\nPosition des pions du joueur %d:\n",i+1);
+            break;
+            case 2:
+            printf("\nPosition of player %d's pawns:\n",i+1);
+            break;
+            case 3:
+            printf("\nPosizione delle pedine del giocatore %d:\n",i+1);
+            break;
+            case 4:
+            printf("\nПозиция шашек игрока %d:\n",i+1);
+            break;
+        }
+
+        for (j=0;j<25-3*nb_j;j++)
+        {
+            if (nb_j==2)
+            {
+                switch (langue) //"Pion n°... X: Y:
+                {
+                    case 1:
+                    printf("Pion n%d: X:%d Y:%d\n",j, xpions2[i][j], ypions2[i][j]);
+                    break;
+                    case 2:
+                    printf("Pawn n%d: X:%d Y:%d\n",j, xpions2[i][j], ypions2[i][j]);
+                    break;
+                    case 3:
+                    printf("Pedina n%d: X:%d Y:%d\n",j, xpions2[i][j], ypions2[i][j]);
+                    break;
+                    case 4:
+                    printf("Шашка номер %d: X:%d Y:%d\n",j, xpions2[i][j], ypions2[i][j]);
+                    break;
+                }
+            }
+
+            if (nb_j==4)
+            {
+                switch (langue) //"Pion n°... X: Y:
+                {
+                    case 1:
+                    printf("Pion n%d: X:%d Y:%d\n",j, xpions4[i][j], ypions4[i][j]);
+                    break;
+                    case 2:
+                    printf("Pawn n%d: X:%d Y:%d\n",j, xpions4[i][j], ypions4[i][j]);
+                    break;
+                    case 3:
+                    printf("Pedina n%d: X:%d Y:%d\n",j, xpions4[i][j], ypions4[i][j]);
+                    break;
+                    case 4:
+                    printf("Шашка номер %d: X:%d Y:%d\n",j, xpions4[i][j], ypions4[i][j]);
+                    break;
+                }
+            }
+        }
+
+    }
+    ///fin de l'affichage des pions///
+
+switch (langue) // Choisisez le pion a deplacer
+{
+    case 1:
+    printf("\nChoisisez le pion a deplacer\n");
+    break;
+    case 2:
+    printf("\nChoose wich pawn to move\n");
+    break;
+    case 3:
+    printf("\nScegli la pedina da spostare\n");
+    break;
+    case 4:
+    printf("\nВыберите шашку, которую хотите переместить\n");
+    break;
+}
+
+#include <stdio.h>
+
+#define KNRM  "\x1B[0m"
+#define KRED  "\x1B[31m"
+#define KGRN  "\x1B[32m"
+#define KYEL  "\x1B[33m"
+#define KBLU  "\x1B[34m"
+#define KMAG  "\x1B[35m"
+#define KCYN  "\x1B[36m"
+#define KWHT  "\x1B[37m"
+
+int main()
+{
+    printf("%sred\n", KRED);
+    printf("%sgreen\n", KGRN);
+    printf("%syellow\n", KYEL);
+    printf("%sblue\n", KBLU);
+    printf("%smagenta\n", KMAG);
+    printf("%scyan\n", KCYN);
+    printf("%swhite\n", KWHT);
+    printf("%snormal\n", KNRM);
+
+    return 0;
+}
+#include <stdio.h>
+
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+#define YEL   "\x1B[33m"
+#define BLU   "\x1B[34m"
+#define MAG   "\x1B[35m"
+#define CYN   "\x1B[36m"
+#define WHT   "\x1B[37m"
+#define RESET "\x1B[0m"
+
+int main()
+{
+  printf(RED "red\n" RESET);
+  printf(GRN "green\n" RESET);
+  printf(YEL "yellow\n" RESET);
+  printf(BLU "blue\n" RESET);
+  printf(MAG "magenta\n" RESET);
+  printf(CYN "cyan\n" RESET);
+  printf(WHT "white\n" RESET);
+
+  return 0;
+}
+
+
+do //pour demander les coordonnées d'arrivée
+{
+do //pour demander le pion de depart
+{
+
+    if (deplacement==0 && check)
+    {
+	texte(10, 0, joueur); //10) Ce déplacement n'est pas possible. Voulez-vous choisir un autre pion?
+
+	fflush(stdin);
+	scanf("%d",&continuer);
+    }
+    if (check==0)
+    {
+	if (choix==-1)
+	{
+	    texte(11, 0, joueur); //11) Vous n'avez pas selectioné de pion
+	}
+	else
+	{
+	    texte(12, 0, joueur); //12) Le pion séléctionné ne peut pas être déplacé
+	}
+
+    }
+    if (continuer)
+    {
+
+	texte(13, 0, joueur); //13)  Entrez les coordonnees du pion à déplacer\nx:
+
+	fflush(stdin);
+	scanf("%d", &xchoix);
+	printf("y: ");
+	fflush(stdin);
+	scanf("%d", &ychoix);
+
+	choix = quel_pion(xchoix, ychoix, joueur);
+	if (choix==-1)
+	{
+	    check = 0;
+	}
+	else
+	{
+	    check = pion_possible(choix, joueur);
+	}
+
+    }
+
+} while(check==0);
+
+afficher_deplacements(joueur,choix, 0);
+
+check = 1; //in case we have to come back (wrong coordinates)
+
+
+texte(14, 0, joueur); //14) \n Choisissez les coordonnees d'arrivee du déplacement\nx:
+
+fflush(stdin);
+scanf("%d",&xdestination);
+printf("y: ");
+fflush(stdin);
+scanf("%d",&ydestination);
+
+
+deplacement = quel_deplacement(xchoix, ychoix, xdestination, ydestination);
+
+} while (deplacement==0);
+
+
+            texte(16, 0, joueur); //16) printf("\nChoisissez les coordonnees d'arrivee du deplacement\nx: ");
+
+            fflush(stdin);
+            scanf("%d", &xdestination);
+            printf("y: ");
+            fflush(stdin);
+            scanf("%d", &ydestination);
+            deplacement = saut(xchoix, ychoix, xdestination, ydestination);
+
+            if (deplacement==0)
+            {
+                texte(17, 0, joueur); //17) Ce déplacement n'est pas possible
+
+            }
+            if (deplacement==2)
+            {
+                nouvelles_coordonnees(joueur, choix, xdestination, ydestination);
+
+                xchoix = xdestination;
+                ychoix = ydestination;
+            }
+
+    if (deplacement!=2)
+    {
+        afficher_damier();
+    }
+
+    if (deplacement==2) // pour faire plusieurs sauts d'affilée
+    {
+        afficher_deplacements(joueur, choix, deplacement);
+        print_joueur(joueur);
+
+        texte(15, 0, joueur); //15) Voulez vous effectuer un autre saut? (0- non / 1- oui)
+
+        fflush(stdin);
+        scanf("%d", &continuer);
+        while (continuer)
+        {
+            choix_saut(joueur, &xdestination, &ydestination, choix);
+
+            nouvelles_coordonnees(joueur, choix, xdestination, ydestination);
+
+            afficher_deplacements(joueur, choix, 1);
+            print_joueur(joueur);
+
+            texte(18, 0, joueur); //18) Voulez vous effectuer un autre saut? (0- non / 1- oui)
+
+            fflush(stdin);
+            scanf("%d", &continuer);
+        }
+
+    }
+
+
+    /// IGNORER ÇA
+/*
+    if (salto)
+    {
+        for (i=-2;i<=2;i++)
+        {
+            for (j=-2;j<=2;j++)
+            {
+                if (nb_j==2)
+                {   //pour chaque emplacement autours, voir si c'est possible
+                    if (saut(xpions2[joueur-1][choix], ypions2[joueur-1][choix], xpions2[joueur-1][choix]+i, ypions2[joueur-1][choix]+j))
+                    {
+                        gotoligcol(50-(3*(ypions2[joueur-1][choix]+j)),6*(xpions2[joueur-1][choix]+i)-3); // simplifié: (47-(((3*ypions2[joueur-1][choix])-3)+1),((6*xpions2[joueur-1][choix])-6)+3)
+                        printf("%s%c%s",CYN, pion3, RESET);
+                        gotoligcol(50-(3*(ypions2[joueur-1][choix]+j)),6*(xpions2[joueur-1][choix]+i)-2); // de même (pareil pour nb_j==4 aussi
+                        printf("%s%c%s",CYN, pion3, RESET);
+                    }
+                }
+                else if (nb_j==4)
+                {
+                    if (saut(xpions4[joueur-1][choix], ypions4[joueur-1][choix], xpions4[joueur-1][choix]+i, ypions4[joueur-1][choix]+j))
+                    {
+                        gotoligcol(50-(3*(ypions4[joueur-1][choix]+j)),6*(xpions4[joueur-1][choix]+i)-3);
+                        printf("%s%c%s",CYN, pion3, RESET);
+                        gotoligcol(50-(3*(ypions4[joueur-1][choix]+j)),6*(xpions4[joueur-1][choix]+i)-2);
+                        printf("%s%c%s",CYN, pion3, RESET);
+                    }
+                }
+            }
+        }
+    }
+    else
+    {
+        for (i=-2;i<=2;i++)
+        {
+            for (j=-2;j<=2;j++)
+            {
+                if (nb_j==2)
+                {   //pour chaque emplacement autours, voir si c'est possible
+                    if (quel_deplacement(xpions2[joueur-1][choix], ypions2[joueur-1][choix], xpions2[joueur-1][choix]+i, ypions2[joueur-1][choix]+j))
+                    {
+                        gotoligcol(50-(3*(ypions2[joueur-1][choix]+j)),6*(xpions2[joueur-1][choix]+i)-3); // simplifié: (47-(((3*ypions2[joueur-1][choix])-3)+1),((6*xpions2[joueur-1][choix])-6)+3)
+                        printf("%s%c%s",CYN, pion3, RESET);
+                        gotoligcol(50-(3*(ypions2[joueur-1][choix]+j)),6*(xpions2[joueur-1][choix]+i)-2); // de même (pareil pour nb_j==4 aussi
+                        printf("%s%c%s",CYN, pion3, RESET);
+                    }
+                }
+                else if (nb_j==4)
+                {
+                    if (quel_deplacement(xpions4[joueur-1][choix], ypions4[joueur-1][choix], xpions4[joueur-1][choix]+i, ypions4[joueur-1][choix]+j))
+                    {
+                        gotoligcol(50-(3*(ypions4[joueur-1][choix]+j)),6*(xpions4[joueur-1][choix]+i)-3);
+                        printf("%s%c%s",CYN, pion3, RESET);
+                        gotoligcol(50-(3*(ypions4[joueur-1][choix]+j)),6*(xpions4[joueur-1][choix]+i)-2);
+                        printf("%s%c%s",CYN, pion3, RESET);
+                    }
+                }
+            }
+        }
+    }*/
+
+    /// ICI
+
+
+//pour selectionner un pion et faire un saut
+void choix_saut(int joueur, int* xdestination, int* ydestination, int choix)
+{
+    int xposition, yposition, xchoix, ychoix, tant, key;
+    int a_x, a_y;
+    tant = 0;
+
+    if (nb_j==2)
+    {
+        xchoix = xpions2[joueur-1][choix];
+        ychoix = ypions2[joueur-1][choix];
+    }
+    if (nb_j==4)
+    {
+        xchoix = xpions4[joueur-1][choix];
+        ychoix = ypions4[joueur-1][choix];
+    }
+
+    xposition = xchoix;
+    yposition = ychoix;
+
+    a_x = xposition;
+    a_y = yposition;
+
+    do//choix de la case d'arrivée
+    {
+        do
+        {
+            afficher_curseur(joueur, a_x, a_y, xposition, yposition);
+            a_x = xposition;
+            a_y = yposition;
+
+            key = getkey();
+
+            if (key==2 && xposition!=1)
+            {
+                xposition--;
+            }
+            else if (key==4 && xposition!=16)
+            {
+                xposition++;
+            }
+            else if (key==1 && yposition!=16)
+            {
+                yposition++;
+            }
+            else if (key==3 && yposition!=1)
+            {
+                yposition--;
+            }
+        }while (key!=5);
+        tant = saut(xchoix, ychoix, xposition, yposition);
+
+    } while (tant==0);
+    //fin du choix de la case d'arrivée
+
+    *xdestination = xposition;
+    *ydestination = yposition;
+}
+
+// 8) pour se souvenir de quel joueur est en train de jouer
+void print_joueur(int joueur)
+{
+    texte(8, 0, joueur); //8)
+}
+
+// return 0 si le déplacement n'est pas possible, 1 si c'est un pas, 2 si c'est un saut
+int quel_deplacement(int x1, int y1, int x2, int y2)
+{
+
+    int deplacement, dx, dy, mx, my, s;
+    dx = x1-x2;
+    dy = y1-y2;
+
+    if (x2<1 || x2>16 || y2<1 || y2>16)
+    {
+        deplacement = 0;
+    }
+    else if (dx==0 && dy==0)
+    {
+        deplacement = 0;
+    }
+    else if (si_pion(x2, y2))
+    {
+        deplacement = 0;
+    }
+    //pour savoir si c'est un pas
+    else if ((dx==1 || dx==-1 || dy==1 || dy==-1) && (dx<2 && dx>-2 && dy<2 && dy>-2))
+    {
+        deplacement = 1;
+    }
+
+    //pour savoir si c'est un saut
+    else if ((dx==2 || dx==-2 || dx==0) && (dy==-2 || dy==0 || dy==2))
+    {
+        mx = (x1+x2)/2;
+        my = (y1+y2)/2;
+        s = si_pion(mx,my);
+        //y a-t-il un pion entre la case de départ et celle d'arrivée?
+        if (s)
+            deplacement = 2;
+        else
+        {
+            deplacement = 0;
+        }
+    }
+    else
+    {
+        deplacement = 0;
+    }
+
+    return deplacement;
+}
+
+
+
+        case 4:
+        switch (langue) //4) combien de joueurs? (2 ou 4)
+        {
+            case 1:
+            printf("\nCombien de joueurs? (2 ou 4)\n");
+            break;
+            case 2:
+            printf("\nHow many players? (2 or 4)\n");
+            break;
+            case 3:
+            printf("\nQuanti giocatori? (2 o 4)\n");
+            break;
+            case 4:
+            printf("\nВыберите количество игроков: (2 или 4)\n");
+            break;
+        }
+        break;        
+	case 8: ///
+        switch (langue) //8) Joueur
+        {
+            case 1:
+            printf("\n%sJoueur %d%s\n",couleurp[joueur-1], joueur, RESET);
+            break;
+            case 2:
+            printf("\n%sPlayer %d%s\n",couleurp[joueur-1], joueur, RESET);
+            break;
+            case 3:
+            printf("\n%sGiocatore %d%s",couleurp[joueur-1], joueur, RESET);
+            break;
+            case 4:
+            printf("\n%sИгрока %d%s\n",couleurp[joueur-1], joueur, RESET);
+            break;
+        }
+        break;
+        case 10: ///
+        switch (langue) //10) Ce déplacement n'est pas possible. Voulez-vous choisir un autre pion?
+        {
+            case 1:
+            printf("\n\nCe déplacement n'est pas possible. Voulez-vous choisir un autre pion? (0 - non / 1 - oui)\n");
+            break;
+            case 2:
+            printf("\n\nThis move is not possible. Do you want to choose a different pawn? (0 - no / 1 - yes)\n");
+            break;
+            case 3:
+            printf("\n\nQuesta mossa non è possibile. Vuoi scegliere un altra pedina? (0 - no / 1 - si)\n");
+            break;
+            case 4:
+            printf("\n\nЭто перемещение невозможно. Желаете ли вы выбрать другую шашку? (0 - нет / 1 - да)\n");
+            break;
+        }
+        break;
+        case 11: ///
+        switch (langue) //11) Vous n'avez pas selectioné de pion
+        {
+            case 1:
+            printf("\n\nVous n'avez pas sélectioné de pion...\n");
+            break;
+            case 2:
+            printf("\n\nYou have not selected a pawn...\n");
+            break;
+            case 3:
+            printf("\n\nNon hai selezionato una pedina...\n");
+            break;
+            case 4:
+            printf("\n\nВы не выбрали шашку...\n");
+            break;
+        }
+        break;
+        case 12: ///
+        switch (langue) //12) Le pion séléctionné ne peut pas être déplacé
+        {
+            case 1:
+            printf("\n\nLe pion sélectionné ne peut pas être déplacé\n");
+            break;
+            case 2:
+            printf("\n\nThe selected pawn cannot be moved\n");
+            break;
+            case 3:
+            printf("\n\nLa pedina selezionata non può essere mossa\n");
+            break;
+            case 4:
+            printf("\n\nВыбранную шашку нельзя переместить\n");
+            break;
+        }
+        break;
+        case 13: ///
+        switch (langue) //13)  Entrez les coordonnees du pion à déplacer\nx:
+        {
+            case 1:
+            printf("\nEntrez les coordonnées du pion à déplacer\nx: ");
+            break;
+            case 2:
+            printf("\nEnter the coordinates of the pawn you want to move\nx: ");
+            break;
+            case 3:
+            printf("\nInserisci le coordinate della pedina che vuoi muovere\nx: ");
+            break;
+            case 4:
+            printf("\nВведите координаты шашки, которую хотите переместить\nx: ");
+            break;
+        }
+        break;
+        case 14: ///
+        switch (langue) //14) Choisissez les coordonnees d'arrivee du déplacement\nx:
+        {
+            case 1:
+            printf("\nEntrez les coordonnées d'arrivée du déplacement\nx: ");
+            break;
+            case 2:
+            printf("\nEnter the final coordinates of your move\nx: ");
+            break;
+            case 3:
+            printf("\nScegli le coordinate di arrivo della mossa\nx: ");
+            break;
+            case 4:
+            printf("\nВведите координаты места, на которое хотите поставить шашку\nx: ");
+            break;
+        }
+        break;
+        case 15: ///
+        switch (langue) //15) Voulez vous effectuer un autre saut? (0 - non / 1 - oui)
+        {
+            case 1:
+            printf("\nVoulez vous effectuer un autre saut? (0 - non / 1 - oui)\n");
+            break;
+            case 2:
+            printf("\nDo you want to make another jump? (0 - no / 1 - yes)\n");
+            break;
+            case 3:
+            printf("\nVuoi fare un altro salto?? (0 - no / 1 - si)\n");
+            break;
+            case 4:
+            printf("\nЖелаете ли вы совершить еще один скачок? (0 - нет / 1 - да)\n");
+            break;
+        }
+        break;
+        case 16: ///
+        switch (langue) //16) printf("\nChoisissez les coordonnees d'arrivee du deplacement\nx: ");
+        {
+            case 1:
+            printf("\n\nChoisissez les coordonnées d'arrivée du déplacement\nx: ");
+            break;
+            case 2:
+            printf("\n\nChoose the final coordinates of your move\nx: ");
+            break;
+            case 3:
+            printf("\n\nScegli le coordinate di arrivo della mossa\nx: ");
+            break;
+            case 4:
+            printf("\n\nВведите координаты места, на которое хотите поставить шашку\nx: ");
+            break;
+        }
+        break;
+        case 17: ///
+        switch (langue) //17) Ce déplacement n'est pas possible
+        {
+            case 1:
+            printf("\nCe déplacement n'est pas possible\n");
+            break;
+            case 2:
+            printf("\nThis move is not allowed\n");
+            break;
+            case 3:
+            printf("\nQuesta mossa non è possibile\n");
+            break;
+            case 4:
+            printf("\nЭто перемещение невозможно\n");
+            break;
+        }
+        break;
+        case 18: ///
+        switch (langue) //18) Voulez vous effectuer un autre saut? (0 - non / 1 - oui)
+        {
+            case 1:
+            printf("\nVoulez vous effectuer un autre saut? (0 - non / 1 - oui)\n");
+            break;
+            case 2:
+            printf("\nDo you want to do another jump? (0 - no / 1 - yes)\n");
+            break;
+            case 3:
+            printf("\nVuoi fare un altro salto?? (0 - no / 1 - si)\n");
+            break;
+            case 4:
+            printf("\nЖелаете ли вы совершить еще один скачок? (0 - нет / 1- да)\n");
+            break;
+        }
+        break;
+
+
+//tout enlevé!! (le texte)
+
+    switch (num)
+    {
+        case 1:
+        switch (langue) //1) ATENTION! Agrandir la fenêtre! plein écran recommandé
+        {
+            case 1:
+            printf("\nATENTION! Agrandir la fenêtre! Plein écran recommandé\n");
+            break;
+            case 2:
+            printf("\nWARNING! Increase the size of the window! Full screen mode highly recommended\n");
+            break;
+            case 3:
+            printf("\nATTENZIONE! Ingrandire le dimensioni della finestra! Schermo intero racommandato\n");
+            break;
+            case 4:
+            printf("\nВНИМАНИЕ! Увеличить окно! Полноэкранный режим рекомендуется\n");
+            break;
+        }
+        break;
+        case 2:
+        switch (langue) //2) Voulez-vous voir les règles du jeu? (0- non / 1- oui)
+        {
+            case 1:
+            printf("\nVoulez-vous voir les règles du jeu? (0 - non / 1 - oui)\n");
+            break;
+            case 2:
+            printf("\nDo you want to read the game rules? (0 - no / 1 - yes)\n");
+            break;
+            case 3:
+            printf("\nVolete leggere le regole del gioco? (0 - no / 1 - si)\n");
+            break;
+            case 4:
+            printf("\nЖелаете ли вы узнать правила игры? (0 - нет / 1 - да))\n");
+            break;
+        }
+        break;
+        case 3:
+        switch (langue) //3) présentation et règles du jeu
+        {
+            case 1:
+            printf("\n\n Le jeu de halma est un jeu de plateau, qui se joue à 2 ou 4 joueurs. \
+Dans le cas où la partie rassemble deux joueurs, chacun possède 19 pions. \
+Dans le jeu à 4, il en dispose de 13. \
+Ces pions sont disposés sur un plateau de 16 cases sur 16. \
+Chaque joueur commence le jeu avec tous ses pions dans un coin du damier (les 'maisons'). \
+Le premier qui réussit à emmener l’intégralité de ses pions jusqu’au coin opposé remporte la partie.\n\n\
+Il y a deux façons  de déplacer un pion:\n\
+Le pas : se déplacer vers une case libre adjacente.\n\
+Le saut : le pion saute par-dessus un pion (adverse ou non) afin de se rendre sur une case libre adjacente à celui-ci. \
+Un pion peut effectuer autant de saut durant un même tour que désiré.\n\
+Un pion peut se déplacer dans n’importe quelle direction (en diagonale aussi).\n\n");
+            break;
+            case 2:
+            printf("\n\nHalma is a board game for 2 or 4 players. \
+When playing with two players, each has 19 pawns. \
+When playing with four players, each has 13. \
+The game happens over a 16 by 16 checkerboard. \
+Each player starts with his pawns in a corner of the board (the 'houses'). \
+The first player who moves all of his pawns to the opposite corner of the board wins the game.\n\n\
+There are two ways of moving a pawn:\n\
+A step: move the pawn to a nearby space.\n\
+A jump: the pawn jumps over another (ally or enemy) to get to a free space on the other side. \
+One said pawn can do as many jumps in a single turn as needed.\n\
+A pawn can move in any direction (diagonally too).\n\n");
+            break;
+            case 3:
+            printf("\n\nHalma è un gioco di società per 2 o 4 giocatori. \
+In due, ognuno ha 19 pedine, in quattro ognuno ne ha 13. \
+Il gioco si svolge su uno scacchiere 16 per 16. \
+Ogni giocatore comincia in un angolo (le 'case'), il primo giocatore a spostare ogni pedina nell'angolo opposto vince la partita.\n\n\
+Ci sono due modi per spostare una pedina:\n\
+Un passo: muovi la pedina su una casella accanto.\n\
+Un salto: la pedina salta sopra un'altra pedina per arrivare sulla casella opposta. \
+Una pedina può fare più salti nello stesso turno.\n\
+Una pedina può spostarsi in qualunque direzione (anche in diagonale).\n\n");
+            break;
+            case 4:
+            printf("\n\nИгра Уголки (или по-буржуйски Халма) рассчитана на партию для двух или четырех человек. \
+В том случае, если игроков двое- каждый из них имеет по 19 шашек (фишек, пионов).  \
+Если же игроков четверо- то у каждого имеется по 13 шашек. \
+Шашки расставляются на доске размером 16 на 16 квадратов. \
+Каждый игрок начинает игру с шашками, расставленными в определенном углу игральной доски (в доме). \
+Первый игрок, сумевший перевести все свои шашки в противоположный дом противника, становится победителем игры.\n\n\
+Шашки можно перемещать двумя способами:\n\
+Ход: перемещение шашки в соседнюю свободную клеткую (вверх, вниз, вправо, влево, по диагонали).\n\
+Скачок: шашка игрока может перепрыгнуть через шашку оппонента на следующую свободную клетку. \n\
+Одной шашкой за один ход игрок может сделать столько скачков, сколько захочет, если это позволяет ситуация.\n\n");
+            break;
+        }
+        break;
+        case 5:
+        switch (langue) //5) Le joueur x a gagné
+        {
+            case 1:
+            printf("Le %sjoueur %d%s a gagné!!\n",couleurp[joueur-1], joueur, RESET);
+            break;
+            case 2:
+            printf("%sPlayer %d%s has won!!\n", couleurp[joueur-1], joueur, RESET);
+            break;
+            case 3:
+            printf("Il %sgiocatore %d%s ha vinto!!\n", couleurp[joueur-1], joueur, RESET);
+            break;
+            case 4:
+            printf("%sИгрок %d%s победил!!\n", couleurp[joueur-1], joueur, RESET);
+            break;
+        }
+        break;
+        case 6:
+        switch (langue) //6) Voulez vous rejouer?
+         {
+            case 1:
+            printf("\nVoulez vous rejouer? (0 - non / 1 - oui)\n");
+            break;
+            case 2:
+            printf("\nDo you want to play again? (0 - no / 1 - yes)\n");
+            break;
+            case 3:
+            printf("\nVolete giocare di nuovo? (0 - no / 1 - si)\n");
+            break;
+            case 4:
+            printf("\nЖелаете ли сыграть еше раз? (0 - нет / 1 - да)\n");
+            break;
+        }
+        break;
+        case 7:
+        switch (langue) //7) merci à Artemii Lazovskii pour la traduction en russe
+        {
+            case 1:
+            printf("Merci à Artemii Lazovskii pour la traduction en Russe\n\n");
+            break;
+            case 2:
+            printf("Special thanks to Artemii Lazovskii for the translation in russian\n\n");
+            break;
+            case 3:
+            printf("Grazie a Artemii Lazovskii per la traduzione in russo\n\n");
+            break;
+            case 4:
+            printf("Благодарность Артему Лазовскому за перевод на русский\n\n");
+            break;
+        }
+        break;
+        case 9:
+        switch (langue) //9) c'est au joueur x de jouer
+        {
+            case 1:
+            printf("\nC'est au %sjoueur %d%s de jouer!!\n",couleurp[joueur-1], joueur, RESET);
+            break;
+            case 2:
+            printf("\nIt's %splayer %d%s's turn!!\n",couleurp[joueur-1], joueur, RESET);
+            break;
+            case 3:
+            printf("\nTocca al %sgiocatore %d%s!!",couleurp[joueur-1], joueur, RESET);
+            break;
+            case 4:
+            printf("\nХод %sигрока %d%s!!\n",couleurp[joueur-1], joueur, RESET);
+            break;
+        }
+        break;
+        case 19:
+        switch (langue) //19) ***FIN DU TOUR***
+        {
+            case 1:
+            printf("\n\n%s***FIN DU TOUR***%s\n\n",couleurp[joueur-1], RESET);
+            break;
+            case 2:
+            printf("\n\n%s***END OF TURN***%s\n\n",couleurp[joueur-1], RESET);
+            break;
+            case 3:
+            printf("\n\n%s***FINE DEL TURNO***%s\n\n",couleurp[joueur-1], RESET);
+            break;
+            case 4:
+            printf("\n\n%s***КОНЕЦ ХОДА***%s\n\n",couleurp[joueur-1], RESET);
+            break;
+        }
+        break;
+        case 20:
+        switch (langue) //20) Quel type de clavier utilisez-vous? (azerty - 0 ou qwerty - 1)
+        {
+            case 1:
+            printf("\nQuel type de clavier utilisez-vous? (azerty - 0 ou qwerty - 1)\n");
+            break;
+            case 2:
+            printf("\nWhat type of keyboard do you use? (azerty - 0 or qwerty - 1)\n");
+            break;
+            case 3:
+            printf("\nChe tipo di tastiera usi? (azerty - 0 o qwerty - 1)\n");
+            break;
+            case 4:
+            printf("\nКакую клавиатуру вы используете? (azerty - 0 или qwerty -1)\n");
+            break;
+        }
+        break;
+        case 21:
+        switch (langue) //21) Votre clavier est défini comme azerty par défaut
+        {
+            case 1:
+            printf("\nVotre clavier est défini comme azerty par défaut\n");
+            break;
+            case 2:
+            printf("\nYour keyboard has been set to azerty by default\n");
+            break;
+            case 3:
+            printf("\nLa tastiera è predefinita come azerty\n");
+            break;
+            case 4:
+            printf("\nВаша клавиатура изначально определяется как Azerty\n");
+            break;
+        }
+        break;
+        case 22:
+        if (joueur==0)
+        {
+            z = 'Z';
+            q = 'Q';
+            s = 'S';
+            d = 'D';
+        }
+        else if (joueur==1)
+        {
+            z = 'W';
+            q = 'A';
+            s = 'S';
+            d = 'D';
+        }
+
+        switch (langue) //22) Utilisez z pour vous déplacer vers le haut, s pour le bas, q pour gauche d pour droite
+        {               //, ENTRÉE pour valider le choix et p pour mettre le jeu en pause
+            case 1:
+            printf("\nUtilisez %c pour déplacer le curseur vers le haut, %c pour le bas, %c pour gauche \
+%c pour droite, ENTRÉE pour valider le choix et p pour mettre le jeu en pause\n", z, s, q, d);
+            break;
+            case 2:
+            printf("\nUse %c to move the cursor upwards, %c to move it downwards, %c to the left, \
+%c to move to it the right, ENTER to validate your choice and p to pause the game\n", z, s, q, d);
+            break;
+            case 3:
+            printf("\nUsa %c per spostare il cursore verso l'alto, %c per spostarlo verso il basso, %c verso sinistra, \
+%c verso destra, ENTER per validare la scelta e p per mettere il gioco in pausa\n", z, s, q, d);
+            break;
+            case 4:
+            printf("\nИспользуйте %c, чтобы переместить курсор вверх, %c, чтобы переместить его вниз, %c, чтобы переместить его влево, \
+%c, чтобы переместить его вправо, и нажмите клавишу  ENTER, чтобы подтвердить свой выбор, и p, чтобы поставить игру на паузу\n", z, s, q, d);
+            break;
+        }
+        break;
+        case 23:
+        switch (langue) //23) Voulez vous charger la partie sauvegardée? (0 - non / 1 - oui)
+        {
+            case 1:
+            printf("\nVoulez vous charger la partie sauvegardée? (0 - non / 1 - oui)\n");
+            break;
+            case 2:
+            printf("\nDo you want to load the saved game? (0 - no / 1 - yes)\n");
+            break;
+            case 3:
+            printf("\nVolete caricare la partita salvata? (0 - no / 1 - si)\n");
+            break;
+            case 4:
+            printf("\n Желаете ли вы загрузить сохранённую игру? (0 - нет / 1 - да)\n");
+            break;
+        }
+        break;
+        case 24:
+        switch (langue) //24) ***Pause***
+        {
+            case 1:
+            case 2:
+            printf("***PAUSE***");
+            break;
+            case 3:
+            printf("***PAUSA***");
+            break;
+            case 4:
+            printf("***Пауза***");
+            break;
+        }
+        break;
+        case 25:
+        switch (langue) //25) 1 - Reprendre la partie
+        {
+            case 1:
+            printf("1 - Reprendre la partie");
+            break;
+            case 2:
+            printf("1 - Resume game");
+            break;
+            case 3:
+            printf("1 - Riprendere la partita");
+            break;
+            case 4:
+            printf("1 - Возобновить партию");
+            break;
+        }
+        break;
+        case 26:
+        switch (langue) //26) 2 - Sauvegarder la partie
+        {
+            case 1:
+            printf("2 - Sauvegarder la partie");
+            break;
+            case 2:
+            printf("2 - Save game");
+            break;
+            case 3:
+            printf("2 - Salvare la partita");
+            break;
+            case 4:
+            printf("2 - Сохранить партию");
+            break;
+        }
+        break;
+        case 27:
+        switch (langue) //27) ***Partie enregistrée***
+        {
+            case 1:
+            printf("***Partie sauvegardée***");
+            break;
+            case 2:
+            printf("***Game saved***");
+            break;
+            case 3:
+            printf("***Partita salvata***");
+            break;
+            case 4:
+            printf("***Партия сохранена***");
+            break;
+        }
+        break;
+        case 28:
+        switch (langue) //28) 4 -  Quitter le jeu
+        {
+            case 1:
+            printf("4 - Quitter le jeu");
+            break;
+            case 2:
+            printf("4 - Leave the game");
+            break;
+            case 3:
+            printf("4 - Uscire dal Gioco");
+            break;
+            case 4:
+            printf("4 - Выйти из игры");
+            break;
+        }
+        break;
+        case 29:
+        switch (langue) //29) 3 - Paramètres du clavier
+        {
+            case 1:
+            printf("3 - Paramètres du clavier");
+            break;
+            case 2:
+            printf("3 - Keyboard settings");
+            break;
+            case 3:
+            printf("3 - Impostazioni della tastiera");
+            break;
+            case 4:
+            printf("3 - Настройки клавиатуры");
+            break;
+        }
+        break;
+        case 30:
+        switch (langue) //30) Quel type de clavier utilisez-vous?
+        {
+            case 1:
+            printf("Quel type de clavier utilisez-vous?");
+            break;
+            case 2:
+            printf("What type of keyboard do you use?");
+            break;
+            case 3:
+            printf("Che tipo di tastiera usi?");
+            break;
+            case 4:
+            printf("Какую клавиатуру вы используете?");
+            break;
+        }
+        break;
+        case 31:
+        switch (langue) //31) 0 - azerty
+        {
+            case 1:
+            printf("0 - azerty");
+            break;
+            case 2:
+            printf("0 - azerty");
+            break;
+            case 3:
+            printf("0 - azerty");
+            break;
+            case 4:
+            printf("0 - azerty");
+            break;
+        }
+        break;
+        case 32:
+        switch (langue) //32) 1 - qwerty
+        {
+            case 1:
+            printf("1 - qwerty");
+            break;
+            case 2:
+            printf("1 - qwerty");
+            break;
+            case 3:
+            printf("1 - qwerty");
+            break;
+            case 4:
+            printf("1 - qwerty");
+            break;
+        }
+        break;
+        case 33:
+        if (joueur==0)
+        {
+            z = 'Z';
+            s = 'S';
+        }
+        else if (joueur==1)
+        {
+            z = 'W';
+            s = 'S';
+        }
+
+        switch (langue) //33) Utilisez %c pour déplacer le curseur vers le haut, %c pour le bas
+        {               //  et ENTRÉE pour selectionner
+            case 1:
+            printf("\nUtilisez %c pour déplacer le curseur vers le haut, %c pour le bas \
+et ENTRÉE pour selectionner\n", z, s);
+            break;
+            case 2:
+            printf("\nUse %c to move the cursor upwards, %c to move it downwards \
+and ENTER to validate your choice\n", z, s);
+            break;
+            case 3:
+            printf("\nUsa %c per spostare il cursore verso l'alto, %c per spostarlo verso il basso \
+e ENTER per validare la scelta\n", z, s);
+            break;
+            case 4:
+            printf("\nИспользуйте %c, чтобы переметить курсор вверх, и %c, чтобы переместить его вниз \
+Нажмите клавишу ENTER, для выбора клетки\n", z, s);
+            break;
+        }
+        break;
+        case 34:
+        switch (langue) //34) Combien de maisons?
+        {
+            case 1:
+            printf("Combien de maisons?");
+            break;
+            case 2:
+            printf("How many houses?");
+            break;
+            case 3:
+            printf("Quante case?");
+            break;
+            case 4:
+            printf("Сколько домиков?");
+            break;
+        }
+        break;
+        case 35:
+        switch (langue) //35) %d Maisons
+        {
+            case 1:
+            printf("%d Maisons", joueur);
+            break;
+            case 2:
+            printf("%d Houses", joueur);
+            break;
+            case 3:
+            printf("%d Case", joueur);
+            break;
+            case 4:
+            printf("%d Домики", joueur);
+            break;
+        }
+        break;
+        case 36:
+        switch (langue) //36) Choisissez pour chaque maison si vous voullez une Intelligence Artificielle ou un Joueur
+        {
+            case 1:
+            printf("Choisissez pour chaque maison si vous voullez une Intelligence Artificielle ou un Joueur");
+            break;
+            case 2:
+            printf("Choose for each house whether you want an Artificial Intelligence or a Player");
+            break;
+            case 3:
+            printf("Scegli per ogni casa se vuoi un Intelligenza Artificiale o un Giocatore");
+            break;
+            case 4:
+            printf("Отдайте каждый домик под управление другого икорка или под управление компьютера, если желаете");
+            break;
+        }
+        break;
+        case 37:
+        switch (langue) //37) Maison n°%d
+        {
+            case 1:
+            printf("%sMaison n°%d%s", couleurp[joueur], joueur+1, RESET);
+            break;
+            case 2:
+            printf("%sHouse n°%d%s", couleurp[joueur], joueur+1, RESET);
+            break;
+            case 3:
+            printf("%sCasa n°%d%s", couleurp[joueur], joueur+1, RESET);
+            break;
+            case 4:
+            printf("%sДомик n°%d%s", couleurp[joueur], joueur+1, RESET);
+            break;
+        }
+        break;
+        case 38:
+        switch (langue) //38) PL
+        {
+            case 1:
+            case 2:
+            case 3:
+            printf("%sPL%s", couleurp[joueur], RESET);
+            break;
+            case 4:
+            printf("%sИГ%s", couleurp[joueur], RESET);
+            break;
+        }
+        break;
+        case 39:
+        switch (langue) //39) IA
+        {
+            case 1:
+            case 3:
+            printf("%sIA%s", couleurp[joueur], RESET);
+            break;
+            case 2:
+            printf("%sAI%s", couleurp[joueur], RESET);
+            break;
+            case 4:
+            printf("%sИИ%s", couleurp[joueur], RESET);
+            break;
+        }
+        break;
+        case 40:
+        switch (langue) //40) Confirmer
+        {
+            case 1:
+            printf("Confirmer");
+            break;
+            case 2:
+            printf("Confirm");
+            break;
+            case 3:
+            printf("Confermare");
+            break;
+            case 4:
+            printf("Подтвердить");
+            break;
+        }
+        break;
+
+        default:
+        break;
+    }
+
