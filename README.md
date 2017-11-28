@@ -1,2 +1,2 @@
 # Halma
-A small board game for Linux terminal.
+A small board game for Linux terminal made for academic purposes
